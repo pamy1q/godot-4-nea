@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://8qdeoa1me8wj"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_0wac4"]
+[ext_resource type="Texture2D" uid="uid://blc0oofj0cvi5" path="res://Untitled_Artwork.png" id="2_62ubx"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_0wac4")
+
+[node name="UntitledArtwork" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(382, 250)
+texture = ExtResource("2_62ubx")
