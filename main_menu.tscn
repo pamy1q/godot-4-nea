@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://byk1i6ynyx5yq"]
+[gd_scene load_steps=11 format=3 uid="uid://byk1i6ynyx5yq"]
 
-[ext_resource type="Texture2D" uid="uid://bhn5pc7set1al" path="res://SNES - Super Mario Kart - Title & Results Background.png" id="1_5uf3g"]
-[ext_resource type="Texture2D" uid="uid://c7mhni4j0bmk5" path="res://name nea.png" id="2_fdjsm"]
+[ext_resource type="Texture2D" uid="uid://bhn5pc7set1al" path="res://assets/SNES - Super Mario Kart - Title & Results Background.png" id="1_5uf3g"]
+[ext_resource type="Script" path="res://main_options.gd" id="1_fbs0i"]
+[ext_resource type="Texture2D" uid="uid://c7mhni4j0bmk5" path="res://assets/name nea.png" id="2_fdjsm"]
+[ext_resource type="AudioStream" uid="uid://dl8i8cq2ih0xo" path="res://assets/Audio/gpc1.mp3" id="3_7v1jx"]
 
 [sub_resource type="Theme" id="Theme_d340a"]
 
@@ -49,6 +51,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_d340a")
+script = ExtResource("1_fbs0i")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -74,7 +77,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 2
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="Play Game" type="Button" parent="VBoxContainer"]
 layout_direction = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -84,7 +87,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_oksbx")
 theme_override_styles/normal = SubResource("StyleBoxFlat_wxiwp")
 text = "Play game"
 
-[node name="Button2" type="Button" parent="VBoxContainer"]
+[node name="Options" type="Button" parent="VBoxContainer"]
 layout_direction = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -95,7 +98,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_wxiwp")
 text = "Options
 "
 
-[node name="Button3" type="Button" parent="VBoxContainer/Button2"]
+[node name="Exit" type="Button" parent="VBoxContainer/Options"]
 layout_direction = 1
 layout_mode = 2
 offset_left = -1.0
@@ -123,3 +126,7 @@ offset_right = 196.0
 offset_bottom = 286.0
 grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_shmsm")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_7v1jx")
+autoplay = true
