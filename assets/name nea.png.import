@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c7mhni4j0bmk5"
-path="res://.godot/imported/name nea.png-71935bf52027c55b95191bea624ea57c.ctex"
+path="res://.godot/imported/name nea.png-2e6426bba0c7ef9df4d10133d98b571f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://name nea.png"
-dest_files=["res://.godot/imported/name nea.png-71935bf52027c55b95191bea624ea57c.ctex"]
+source_file="res://assets/name nea.png"
+dest_files=["res://.godot/imported/name nea.png-2e6426bba0c7ef9df4d10133d98b571f.ctex"]
 
 [params]
 
