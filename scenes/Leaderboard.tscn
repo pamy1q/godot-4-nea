@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbfkh5x5el1oc"]
+
+[ext_resource type="FontFile" uid="uid://h1gjv86lqdpf" path="res://fonts/Super Pixels Regular.otf" id="1_0tlxa"]
+[ext_resource type="Script" uid="uid://b17qec2i7l480" path="res://scenes/leaderboard.gd" id="1_bnibd"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bnibd")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1139.0
+offset_bottom = 644.0
+color = Color(0.756863, 0.580392, 1, 0.792157)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.513
+anchor_top = 0.279
+anchor_right = 0.513
+anchor_bottom = 0.279
+offset_left = -312.976
+offset_top = -31.792
+offset_right = 314.024
+offset_bottom = 274.208
+grow_horizontal = 2
+
+[node name="LeaderboardLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.811765, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_0tlxa")
+theme_override_font_sizes/font_size = 50
+text = "Leaderboard"

@@ -1,0 +1,164 @@
+[gd_scene load_steps=22 format=3 uid="uid://ddoti5dltwoow"]
+
+[ext_resource type="Script" uid="uid://d4eiesdejdyym" path="res://scenes/rook_kart.gd" id="1_6x5y6"]
+[ext_resource type="Texture2D" uid="uid://dgs0rl8racdpf" path="res://sprites/driving animation.png" id="2_i3koa"]
+[ext_resource type="Texture2D" uid="uid://bi1vfr55ljcvd" path="res://sprites/Turning car 2025-04-19 13_02_08.png" id="3_i3koa"]
+[ext_resource type="Script" uid="uid://dn6h020cbbry3" path="res://scenes/camera_player.gd" id="4_20dh8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4vejd"]
+atlas = ExtResource("2_i3koa")
+region = Rect2(444, 0, 37, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ws0vm"]
+atlas = ExtResource("2_i3koa")
+region = Rect2(481, 0, 37, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qivf0"]
+atlas = ExtResource("3_i3koa")
+region = Rect2(137, 0, 33, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d17oo"]
+atlas = ExtResource("3_i3koa")
+region = Rect2(103, 0, 33, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swe5y"]
+atlas = ExtResource("3_i3koa")
+region = Rect2(69, 0, 33, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2brh"]
+atlas = ExtResource("2_i3koa")
+region = Rect2(1, 0, 36, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dn4c7"]
+atlas = ExtResource("2_i3koa")
+region = Rect2(0, 0, 37, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20dh8"]
+atlas = ExtResource("2_i3koa")
+region = Rect2(337, 0, 37, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vagmk"]
+atlas = ExtResource("2_i3koa")
+region = Rect2(374, 0, 37, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fbva"]
+atlas = ExtResource("2_i3koa")
+region = Rect2(181, 0, 36, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdoxd"]
+atlas = ExtResource("2_i3koa")
+region = Rect2(145, 0, 36, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ys35"]
+atlas = ExtResource("2_i3koa")
+region = Rect2(109, 0, 36, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmo7e"]
+atlas = ExtResource("3_i3koa")
+region = Rect2(66, 0, 38, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwrda"]
+atlas = ExtResource("3_i3koa")
+region = Rect2(136, 0, 36, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkhaf"]
+atlas = ExtResource("3_i3koa")
+region = Rect2(100, 0, 36, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rhr3r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4vejd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ws0vm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qivf0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d17oo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_swe5y")
+}],
+"loop": true,
+"name": &"crash_car",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2brh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dn4c7")
+}],
+"loop": true,
+"name": &"idle_car",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20dh8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vagmk")
+}],
+"loop": true,
+"name": &"steer_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2fbva")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tdoxd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ys35")
+}],
+"loop": true,
+"name": &"steer_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmo7e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwrda")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vkhaf")
+}],
+"loop": true,
+"name": &"turn_straight",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rl0uc"]
+size = Vector2(28, 24)
+
+[node name="car" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_6x5y6")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = 0
+limit_right = 1168
+limit_bottom = 645
+script = ExtResource("4_20dh8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 3)
+scale = Vector2(1.16667, 1.14773)
+sprite_frames = SubResource("SpriteFrames_rhr3r")
+animation = &"steer_left"
+autoplay = "idle_car"
+frame_progress = 0.841191
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -2)
+shape = SubResource("RectangleShape2D_rl0uc")

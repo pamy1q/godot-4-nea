@@ -1,0 +1,83 @@
+[gd_scene load_steps=6 format=3 uid="uid://gty2td6r31jo"]
+
+[ext_resource type="Texture2D" uid="uid://bsh33jhan63x8" path="res://sprites/SNES - Super Mario Kart - Character Select.jpg" id="1_3ky7a"]
+[ext_resource type="Script" uid="uid://8uqnaiciutd" path="res://characterSelection.gd" id="1_op2ud"]
+[ext_resource type="FontFile" uid="uid://bf8hmn4llcpv7" path="res://fonts/RaceFontBack.otf" id="2_ila6h"]
+[ext_resource type="Texture2D" uid="uid://dttcbtudnuojh" path="res://sprites/W_Queen.png" id="4_f5t6p"]
+[ext_resource type="Texture2D" uid="uid://7c72bnpvqhqf" path="res://sprites/castle.png" id="5_pd1ex"]
+
+[node name="CharacterSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_op2ud")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -3.0
+offset_right = 1152.0
+offset_bottom = 642.0
+texture = ExtResource("1_3ky7a")
+
+[node name="RookLabel" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 185.0
+offset_right = 272.0
+offset_bottom = 208.0
+text = "	Rook
+"
+
+[node name="Rook" type="TextureButton" parent="TextureRect"]
+layout_mode = 0
+offset_left = 163.0
+offset_top = 163.0
+offset_right = 307.0
+offset_bottom = 325.0
+
+[node name="QueenLabel" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 178.0
+offset_right = 502.0
+offset_bottom = 227.0
+text = "Queen
+"
+
+[node name="Queen" type="TextureButton" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.017
+anchor_bottom = 0.068
+offset_left = 394.0
+offset_top = 175.0
+offset_right = 531.433
+offset_bottom = 278.14
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 495.0
+offset_top = 71.0
+offset_right = 535.0
+offset_bottom = 94.0
+theme_override_colors/font_color = Color(0.921569, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ila6h")
+text = "Choose your driver"
+
+[node name="WQueen" type="Sprite2D" parent="."]
+position = Vector2(464, 256)
+scale = Vector2(4.8125, 3.03125)
+texture = ExtResource("4_f5t6p")
+
+[node name="Castle" type="Sprite2D" parent="."]
+position = Vector2(249, 272)
+texture = ExtResource("5_pd1ex")
+
+[connection signal="pressed" from="TextureRect/Rook" to="." method="_on_rook_pressed"]
+[connection signal="pressed" from="TextureRect/Queen" to="." method="_on_queen_pressed"]

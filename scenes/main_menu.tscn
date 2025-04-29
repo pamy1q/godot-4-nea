@@ -1,0 +1,145 @@
+[gd_scene load_steps=11 format=3 uid="uid://byk1i6ynyx5yq"]
+
+[ext_resource type="Script" uid="uid://ceqes0tsnrdvl" path="res://scripts/main_menu1.gd" id="1_wu84c"]
+[ext_resource type="Texture2D" uid="uid://bhn5pc7set1al" path="res://assets/SNES - Super Mario Kart - Title & Results Background.png" id="2_8ln24"]
+[ext_resource type="Texture2D" uid="uid://c7mhni4j0bmk5" path="res://assets/name nea.png" id="3_rtw2f"]
+[ext_resource type="AudioStream" uid="uid://dl8i8cq2ih0xo" path="res://assets/Audio/gpc1.mp3" id="4_oa1go"]
+[ext_resource type="PackedScene" uid="uid://bonp1y2eh24k5" path="res://scenes/Options_Menu/options_menu.tscn" id="5_8ln24"]
+
+[sub_resource type="Theme" id="Theme_d340a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m0oxf"]
+bg_color = Color(0.687215, 0.687215, 0.687215, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.146)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oksbx"]
+bg_color = Color(0.699653, 0.699654, 0.699651, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.146)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wxiwp"]
+bg_color = Color(0.942823, 0.942823, 0.942823, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.146)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_shmsm"]
+content_margin_left = 9.0
+content_margin_top = 15.0
+content_margin_bottom = 11.0
+texture = ExtResource("3_rtw2f")
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_d340a")
+script = ExtResource("1_wu84c")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_8ln24")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 23
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="seperator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Seperator" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Start_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_direction = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_m0oxf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oksbx")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wxiwp")
+text = "Play game"
+
+[node name="Options_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_direction = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_m0oxf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oksbx")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wxiwp")
+text = "Options
+"
+
+[node name="Exit_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_direction = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_m0oxf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oksbx")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wxiwp")
+text = "Exit
+"
+
+[node name="Panel2" type="Panel" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.515
+anchor_top = 0.09
+anchor_right = 0.515
+anchor_bottom = 0.09
+offset_left = -213.28
+offset_top = -121.32
+offset_right = 163.72
+offset_bottom = 164.68
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_shmsm")
+
+[node name="Options_Menu" parent="." instance=ExtResource("5_8ln24")]
+layout_mode = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_oa1go")
+autoplay = true

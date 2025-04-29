@@ -1,0 +1,88 @@
+[gd_scene load_steps=7 format=3 uid="uid://dgpfsn1dulfgj"]
+
+[ext_resource type="Script" uid="uid://c0fodedxh4nfd" path="res://character_selection.gd" id="1_pwu4o"]
+[ext_resource type="Texture2D" uid="uid://bsh33jhan63x8" path="res://sprites/SNES - Super Mario Kart - Character Select.jpg" id="1_xahou"]
+[ext_resource type="Texture2D" uid="uid://56usuyjq78df" path="res://sprites/B_Bishop.png" id="2_i640r"]
+[ext_resource type="FontFile" uid="uid://h1gjv86lqdpf" path="res://fonts/Super Pixels Regular.otf" id="2_ve3h0"]
+[ext_resource type="Texture2D" uid="uid://7c72bnpvqhqf" path="res://sprites/castle.png" id="2_ysev7"]
+[ext_resource type="Texture2D" uid="uid://dttcbtudnuojh" path="res://sprites/W_Queen.png" id="3_i640r"]
+
+[node name="Character_Selection" type="Node2D"]
+script = ExtResource("1_pwu4o")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 3.0
+offset_top = -2.0
+offset_right = 1163.0
+offset_bottom = 642.0
+texture = ExtResource("1_xahou")
+
+[node name="Driver" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -141.0
+offset_top = 84.0
+offset_right = 139.0
+offset_bottom = 107.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.956863, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ve3h0")
+theme_override_font_sizes/font_size = 20
+text = "Choose your driver"
+
+[node name="Rook" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 227.0
+offset_top = 181.0
+offset_right = 280.0
+offset_bottom = 230.0
+text = "Rook
+"
+
+[node name="Queen" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 182.0
+offset_right = 483.0
+offset_bottom = 205.0
+text = "Queen
+"
+
+[node name="Bishop" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 667.0
+offset_top = 181.0
+offset_right = 720.0
+offset_bottom = 204.0
+text = "Bishop"
+
+[node name="Rook1" type="TextureButton" parent="TextureRect"]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 212.0
+offset_right = 337.0
+offset_bottom = 340.0
+texture_normal = ExtResource("2_ysev7")
+
+[node name="Queen1" type="TextureButton" parent="TextureRect"]
+layout_mode = 0
+offset_left = 420.0
+offset_top = 191.0
+offset_right = 449.0
+offset_bottom = 226.0
+scale = Vector2(5.53125, 4.42188)
+texture_normal = ExtResource("3_i640r")
+
+[node name="Bishop1" type="TextureButton" parent="TextureRect"]
+layout_mode = 0
+offset_left = 618.0
+offset_top = 177.0
+offset_right = 634.0
+offset_bottom = 209.0
+scale = Vector2(8.375, 4.4375)
+texture_normal = ExtResource("2_i640r")
+
+[connection signal="pressed" from="TextureRect/Rook1" to="." method="_on_rook_1_pressed"]
+[connection signal="pressed" from="TextureRect/Queen1" to="." method="_on_queen_1_pressed"]
