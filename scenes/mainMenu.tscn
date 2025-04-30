@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://byk1i6ynyx5yq"]
 
-[ext_resource type="Script" uid="uid://ceqes0tsnrdvl" path="res://scripts/main_menu1.gd" id="1_wu84c"]
-[ext_resource type="Texture2D" uid="uid://bhn5pc7set1al" path="res://assets/SNES - Super Mario Kart - Title & Results Background.png" id="2_8ln24"]
-[ext_resource type="Texture2D" uid="uid://c7mhni4j0bmk5" path="res://assets/name nea.png" id="3_rtw2f"]
-[ext_resource type="AudioStream" uid="uid://dl8i8cq2ih0xo" path="res://assets/Audio/gpc1.mp3" id="4_oa1go"]
-[ext_resource type="PackedScene" uid="uid://bonp1y2eh24k5" path="res://scenes/Options_Menu/options_menu.tscn" id="5_8ln24"]
+[ext_resource type="Script" uid="uid://ceqes0tsnrdvl" path="res://scripts/main_menu1.gd" id="1_7nrmo"]
+[ext_resource type="Texture2D" uid="uid://bhn5pc7set1al" path="res://assets/SNES - Super Mario Kart - Title & Results Background.png" id="2_clbkb"]
+[ext_resource type="Texture2D" uid="uid://c7mhni4j0bmk5" path="res://assets/name nea.png" id="3_ldpc3"]
+[ext_resource type="PackedScene" uid="uid://bonp1y2eh24k5" path="res://scenes/Options_Menu/optionsMenu.tscn" id="4_7nrmo"]
+[ext_resource type="AudioStream" uid="uid://dl8i8cq2ih0xo" path="res://assets/Audio/gpc1.mp3" id="5_dj72i"]
 
 [sub_resource type="Theme" id="Theme_d340a"]
 
@@ -39,7 +39,7 @@ shadow_offset = Vector2(0, 3.146)
 content_margin_left = 9.0
 content_margin_top = 15.0
 content_margin_bottom = 11.0
-texture = ExtResource("3_rtw2f")
+texture = ExtResource("3_ldpc3")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -49,7 +49,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_d340a")
-script = ExtResource("1_wu84c")
+script = ExtResource("1_7nrmo")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -58,7 +58,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_8ln24")
+texture = ExtResource("2_clbkb")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -137,9 +137,9 @@ grow_horizontal = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_shmsm")
 
-[node name="Options_Menu" parent="." instance=ExtResource("5_8ln24")]
+[node name="Options_Menu" parent="." instance=ExtResource("4_7nrmo")]
 layout_mode = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_oa1go")
+stream = ExtResource("5_dj72i")
 autoplay = true

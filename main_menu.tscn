@@ -1,7 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://byk1i6ynyx5yq"]
+[gd_scene load_steps=11 format=3 uid="uid://daw3vx3qo01x2"]
 
 [ext_resource type="Texture2D" uid="uid://bhn5pc7set1al" path="res://assets/SNES - Super Mario Kart - Title & Results Background.png" id="1_5uf3g"]
-[ext_resource type="Script" path="res://main_options.gd" id="1_fbs0i"]
+[ext_resource type="Script" uid="uid://pcwuwf81rarj" path="res://main_options.gd" id="1_fbs0i"]
 [ext_resource type="Texture2D" uid="uid://c7mhni4j0bmk5" path="res://assets/name nea.png" id="2_fdjsm"]
 [ext_resource type="AudioStream" uid="uid://dl8i8cq2ih0xo" path="res://assets/Audio/gpc1.mp3" id="3_7v1jx"]
 
